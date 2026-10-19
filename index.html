@@ -68,8 +68,10 @@
     background: var(--surface);
     color: var(--text);
   }
-  .filters input { flex: 1 1 240px; min-width: 0; }
-  .filters select { flex: 0 0 auto; }
+  .field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .field > span { font-size: .75rem; font-weight: 600; color: var(--muted); }
+  .field-q { flex: 1 1 240px; }
+  .field-uf { flex: 0 0 auto; }
   .filters input:focus, .filters select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 
   .uf-group h2 {
@@ -1362,11 +1364,15 @@ Eleição	UF	Município	Zona	Local de votação inicial	Local de votação final
         <div class="stat"><b>${fmt(totals.eleitores)}</b><span>eleitores nessas seções</span></div>
       </section>
       <div class="filters">
-        <input id="q" type="search" placeholder="Buscar município…" aria-label="Buscar município" autocomplete="off" value="${esc(filterText)}">
-        <select id="uf" aria-label="Filtrar por estado">
-          <option value="">Todos os estados</option>
-          ${ufs.map(u => `<option value="${u}" ${u === filterUf ? 'selected' : ''}>${estado(u)} (${u})</option>`).join('')}
-        </select>
+        <label class="field field-q"><span>Município</span>
+          <input id="q" type="search" placeholder="Buscar município…" autocomplete="off" value="${esc(filterText)}">
+        </label>
+        <label class="field field-uf"><span>Estado</span>
+          <select id="uf">
+            <option value="">Todos os estados</option>
+            ${ufs.map(u => `<option value="${u}" ${u === filterUf ? 'selected' : ''}>${estado(u)} (${u})</option>`).join('')}
+          </select>
+        </label>
       </div>
       <div id="results"></div>`;
     app.querySelector('#share').addEventListener('click', e =>

@@ -131,6 +131,7 @@
   .from { color: var(--muted); text-decoration: line-through; text-decoration-color: #b9bfca; }
   .to { font-weight: 600; }
 
+  .notfound h2 { margin-top: 0; }
   .notfound { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
 
   footer { margin-top: 32px; color: var(--muted); font-size: .85rem; }
@@ -166,7 +167,143 @@
   <footer>Fonte: TSE — tabela “Seções eleitorais alteradas no segundo turno”, extraída em <span class="data-extracao">20/10/2026</span>.</footer>
 </div>
 
-<!-- Dados gerados por build.py a partir de secoes_alteradas_2turno.tsv -->
+<!-- Dados gerados por build.py: extração mais recente e municípios que constavam só em extrações anteriores -->
+<script id="anteriores" type="text/tab-separated-values">
+UF	Município	Última extração
+AC	BRASILÉIA	19/10/2026
+AC	CAPIXABA	19/10/2026
+AC	RIO BRANCO	19/10/2026
+AC	XAPURI	19/10/2026
+AL	CRAÍBAS	19/10/2026
+AL	DELMIRO GOUVEIA	19/10/2026
+AL	MAJOR ISIDORO	19/10/2026
+AM	MANAUS	19/10/2026
+AM	SÃO PAULO DE OLIVENÇA	19/10/2026
+AP	FERREIRA GOMES	19/10/2026
+AP	SANTANA	19/10/2026
+BA	ANGICAL	19/10/2026
+BA	ARACATU	19/10/2026
+BA	BAIANÓPOLIS	19/10/2026
+BA	BOA VISTA DO TUPIM	19/10/2026
+BA	CASTRO ALVES	19/10/2026
+BA	CHORROCHÓ	19/10/2026
+BA	CURAÇÁ	19/10/2026
+BA	EUNÁPOLIS	19/10/2026
+BA	GUANAMBI	19/10/2026
+BA	ITABERABA	19/10/2026
+BA	ITAPARICA	19/10/2026
+BA	JAGUARARI	19/10/2026
+BA	JEQUIÉ	19/10/2026
+BA	MACAJUBA	19/10/2026
+BA	MANOEL VITORINO	19/10/2026
+BA	RAFAEL JAMBEIRO	19/10/2026
+BA	RIACHÃO DAS NEVES	19/10/2026
+BA	SALVADOR	19/10/2026
+BA	SANTANÓPOLIS	19/10/2026
+BA	SERRA DOURADA	19/10/2026
+GO	ABADIÂNIA	19/10/2026
+GO	ANÁPOLIS	19/10/2026
+GO	BOM JESUS	19/10/2026
+GO	CASTELÂNDIA	19/10/2026
+GO	JATAÍ	19/10/2026
+GO	PORANGATU	19/10/2026
+GO	PORTEIRÃO	19/10/2026
+GO	URUAÇU	19/10/2026
+MA	CAROLINA	19/10/2026
+MA	PORTO FRANCO	19/10/2026
+MG	AUGUSTO DE LIMA	19/10/2026
+MG	BUENÓPOLIS	19/10/2026
+MG	CHIADOR	19/10/2026
+MG	CORDISBURGO	19/10/2026
+MG	GRÃO MOGOL	19/10/2026
+MG	ITAPEVA	19/10/2026
+MG	JOAQUIM FELÍCIO	19/10/2026
+MG	MAR DE ESPANHA	19/10/2026
+MG	MARTINHO CAMPOS	19/10/2026
+MG	MIRADOURO	19/10/2026
+MG	MUNHOZ	19/10/2026
+MG	MURIAÉ	19/10/2026
+MG	PASSA TEMPO	19/10/2026
+MG	SANTO ANTÔNIO DO AVENTUREIRO	19/10/2026
+PB	BELÉM	19/10/2026
+PB	BELÉM DO BREJO DO CRUZ	19/10/2026
+PB	BREJO DO CRUZ	19/10/2026
+PB	CABEDELO	19/10/2026
+PB	CAIÇARA	19/10/2026
+PB	ITABAIANA	19/10/2026
+PB	JOÃO PESSOA	19/10/2026
+PB	PAULISTA	19/10/2026
+PB	REMÍGIO	19/10/2026
+PB	SOUSA	19/10/2026
+PB	SÃO JOSÉ DOS RAMOS	19/10/2026
+PE	BELO JARDIM	19/10/2026
+PE	BOM JARDIM	19/10/2026
+PE	CUSTÓDIA	19/10/2026
+PE	ESCADA	19/10/2026
+PE	GAMELEIRA	19/10/2026
+PE	OURICURI	19/10/2026
+PE	PAULISTA	19/10/2026
+PE	PETROLINA	19/10/2026
+PE	RECIFE	19/10/2026
+PE	SANTA FILOMENA	19/10/2026
+PE	VERTENTE DO LÉRIO	19/10/2026
+PI	AMARANTE	19/10/2026
+PI	ANGICAL DO PIAUÍ	19/10/2026
+PI	BURITI DOS LOPES	19/10/2026
+PI	CAMPO GRANDE DO PIAUÍ	19/10/2026
+PI	CARAÚBAS DO PIAUÍ	19/10/2026
+PI	ISAÍAS COELHO	19/10/2026
+PI	JARDIM DO MULATO	19/10/2026
+PI	LAGOA ALEGRE	19/10/2026
+PI	MASSAPÊ DO PIAUÍ	19/10/2026
+PI	MONSENHOR GIL	19/10/2026
+PI	PALMEIRAIS	19/10/2026
+PI	REGENERAÇÃO	19/10/2026
+PI	SANTO ANTÔNIO DOS MILAGRES	19/10/2026
+PI	SÃO JULIÃO	19/10/2026
+PI	UNIÃO	19/10/2026
+PR	BELA VISTA DA CAROBA	19/10/2026
+PR	CAMPINA DA LAGOA	19/10/2026
+PR	CAMPO LARGO	19/10/2026
+PR	CAPANEMA	19/10/2026
+PR	CORNÉLIO PROCÓPIO	19/10/2026
+PR	CÂNDIDO DE ABREU	19/10/2026
+PR	DIAMANTE D'OESTE	19/10/2026
+PR	FLORAÍ	19/10/2026
+PR	FRANCISCO ALVES	19/10/2026
+PR	GUARACI	19/10/2026
+PR	IBIPORÃ	19/10/2026
+PR	LONDRINA	19/10/2026
+PR	NOVA CANTU	19/10/2026
+PR	PIÊN	19/10/2026
+PR	PONTA GROSSA	19/10/2026
+PR	PORTO AMAZONAS	19/10/2026
+PR	PRANCHITA	19/10/2026
+PR	RIO BONITO DO IGUAÇU	19/10/2026
+PR	SANTO ANTÔNIO DA PLATINA	19/10/2026
+RS	ROLANTE	19/10/2026
+SE	BREJO GRANDE	19/10/2026
+SE	ESTÂNCIA	19/10/2026
+SE	ITABAIANA	19/10/2026
+SE	ITABAIANINHA	19/10/2026
+SE	RIACHUELO	19/10/2026
+SE	SÃO CRISTÓVÃO	19/10/2026
+SE	UMBAÚBA	19/10/2026
+SP	BARUERI	19/10/2026
+TO	ANANÁS	19/10/2026
+TO	ARAGUACEMA	19/10/2026
+TO	ARAGUANÃ	19/10/2026
+TO	ARAGUATINS	19/10/2026
+TO	ARAPOEMA	19/10/2026
+TO	CRISTALÂNDIA	19/10/2026
+TO	FIGUEIRÓPOLIS	19/10/2026
+TO	FORMOSO DO ARAGUAIA	19/10/2026
+TO	MIRACEMA DO TOCANTINS	19/10/2026
+TO	PARAÍSO DO TOCANTINS	19/10/2026
+TO	RIO DA CONCEIÇÃO	19/10/2026
+TO	SAMPAIO	19/10/2026
+TO	TALISMÃ	19/10/2026
+</script>
 <script id="dados" type="text/tab-separated-values">
 Eleição	UF	Município	Zona	Local de votação do primeiro turno	Local de votação do segundo turno	Seção	Eleitorado
 2026	AL	PÃO DE AÇÚCAR	11	UME ANA TEREZA DE JESUS	CRECHE - ANEXO DA UME ANA TEREZA DE JESUS	85	238
@@ -651,6 +788,14 @@ Eleição	UF	Município	Zona	Local de votação do primeiro turno	Local de vota�
   const findCity = param => cities.get(param) ||
     list.find(c => c.slug.toLowerCase() === param.toLowerCase()) || null;
 
+  // municípios que saíram da lista: UF, município e data da última extração em que apareciam
+  const removed = new Map(document.getElementById('anteriores').textContent.trim().split('\n').slice(1)
+    .filter(Boolean).map(line => {
+      const [uf, mun, data] = line.split('\t');
+      return [slugify(mun, uf).toLowerCase(), { uf, name: titleCase(mun), data }];
+    }));
+  const latestDate = document.querySelector('.data-extracao').textContent.trim();
+
   // ---- listagem ----
   // ---- compartilhar: menu nativo no celular, cópia do link no computador ----
   const ICON_LINK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>';
@@ -767,6 +912,20 @@ Eleição	UF	Município	Zona	Local de votação do primeiro turno	Local de vota�
   }
 
   function renderNotFound(param) {
+    const r = removed.get(param.toLowerCase());
+    if (r) {
+      document.title = `${r.name} (${r.uf}) — Seções alteradas no 2º turno`;
+      app.innerHTML = `
+        <div class="notfound">
+          <h2>${esc(r.name)} — ${r.uf}</h2>
+          <p>${esc(r.name)} constava na lista de seções alteradas na extração de <strong>${r.data}</strong>,
+          mas não aparece na extração mais recente do TSE, de <strong>${latestDate}</strong>.
+          Isso pode indicar que a mudança foi desfeita ou que o TSE revisou o relatório.</p>
+          <p>Confirme seu local de votação no aplicativo e-Título ou no site do TSE.</p>
+          <a href="${location.pathname}" data-home>← Ver todos os municípios</a>
+        </div>`;
+      return;
+    }
     document.title = 'Município não encontrado — Seções alteradas no 2º turno';
     app.innerHTML = `
       <div class="notfound">

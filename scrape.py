@@ -1,9 +1,11 @@
 """Coleta a tabela 'SEÇÕES ELEITORAIS ALTERADAS NO SEGUNDO TURNO' do SIG/TSE
 navegando pelo link 'Próximo' e grava em TSV.
 
-Uso: python scrape.py <saida.tsv>
+Uso: python scrape.py [saida.tsv]
+Sem argumento, grava em secoes_alteradas_2turno_AAAA-MM-DD_HHMM.tsv (hora local do fim da coleta).
 """
 import asyncio, re, sys, random
+from datetime import datetime
 from playwright.async_api import async_playwright
 
 BASE = "https://sig.tse.jus.br/ords/dwapr/r/seai/sig-eleicao-eleitorado/"
@@ -64,6 +66,7 @@ async def main(out):
             await asyncio.sleep(random.uniform(0.6, 1.2))  # gentileza com o servidor
         await b.close()
 
+    out = out or f"secoes_alteradas_2turno_{datetime.now():%Y-%m-%d_%H%M}.tsv"
     with open(out, "w", encoding="utf-8", newline="") as f:
         f.write("\t".join(header) + "\n")
         for r in rows:
@@ -73,4 +76,4 @@ async def main(out):
         print("ATENÇÃO: contagem diferente do total informado!")
         sys.exit(1)
 
-asyncio.run(main(sys.argv[1]))
+asyncio.run(main(sys.argv[1] if len(sys.argv) > 1 else None))
